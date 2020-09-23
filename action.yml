@@ -5,16 +5,16 @@ branding:
   icon: "box"
   color: "blue"
 inputs:
-  connection-string:
+  connection_string:
     description: "The connection string with SAS token for the destination storage account"
     required: true
-  container-name:
+  container_name:
     description: "The name of the destination storage account container"
     required: true
-  source-directory:
+  source_directory:
     description: "The local directory containing the files to upload"
     required: true
-  file-pattern:
+  file_pattern:
     description: "An optional file pattern to limit the files uploaded from the source directory"
     required: false
 runs:

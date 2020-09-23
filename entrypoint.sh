@@ -2,18 +2,18 @@
 
 set -e
 
-if [ -z "${INPUT_SOURCE-DIRECTORY}" ]; then
-  echo "source-directory parameter is required"
+if [ -z "${INPUT_SOURCE_DIRECTORY}" ]; then
+  echo "source_directory parameter is required"
   exit 1
 fi
 
-if [ -z "${INPUT_CONTAINER-NAME}" ]; then
-  echo "container-name parameter is required"
+if [ -z "${INPUT_CONTAINER_NAME}" ]; then
+  echo "container_name parameter is required"
   exit 1
 fi
 
-if [ -z "${INPUT_CONNECTION-STRING}" ]; then
-  echo "connection-string parameter is required"
+if [ -z "${INPUT_CONNECTION_STRING}" ]; then
+  echo "connection_string parameter is required"
   exit 1
 fi
 
@@ -25,5 +25,5 @@ else
 fi
 
 echo "Working from ${PWD}"
-echo "Uploading ${INPUT_SOURCE-DIRECTORY} to ${INPUT_CONTAINER-NAME} ..."
-az storage blob upload-batch --connection-string ${INPUT_CONNECTION-STRING} --source ${INPUT_SOURCE-DIRECTORY} --destination ${INPUT_CONTAINER-NAME} ${PATTERN_PARAM} ${OPTIONAL_PATTERN}
+echo "Uploading ${INPUT_SOURCE_DIRECTORY} to ${INPUT_CONTAINER_NAME} ..."
+az storage blob upload-batch --connection-string ${INPUT_CONNECTION_STRING} --source ${INPUT_SOURCE_DIRECTORY} --destination ${INPUT_CONTAINER_NAME} ${PATTERN_PARAM} ${OPTIONAL_PATTERN}

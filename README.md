@@ -21,9 +21,9 @@ jobs:
       - uses: actions/checkout@v2
       - uses: karlsgate/azure-blob-upload@v1
         with:
-          source-directory: _dist
-          container-name: www
-          connection-string: ${{ secrets.ConnectionString }}
+          source_directory: _dist
+          container_name: www
+          connection_string: ${{ secrets.ConnectionString }}
           pattern: '*.tar.gz'
 ```
 
@@ -31,9 +31,9 @@ jobs:
 
 | Key                 | Value                                                                    |
 |---------------------|--------------------------------------------------------------------------|
-| `source-directory`  | The local directory containing the files to upload                       |
-| `container-name`    | The name of the destination storage account container                    |
-| `connection-string` | The connection string with SAS token for the destination storage account |
+| `source_directory`  | The local directory containing the files to upload                       |
+| `container_name`    | The name of the destination storage account container                    |
+| `connection_string` | The connection string with SAS token for the destination storage account |
 
 ### Optional Variables
 
