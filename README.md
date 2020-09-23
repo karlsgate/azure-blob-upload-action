@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: karlsgate/azure-blob-upload-action@v1
+      - uses: karlsgate/azure-blob-upload@v1
         with:
           source-directory: _dist
           container-name: www
