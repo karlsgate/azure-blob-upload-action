@@ -2,17 +2,17 @@
 
 set -e
 
-if [ -z "$INPUT_SOURCE_DIRECTORY" ]; then
+if [ -z "${INPUT_SOURCE-DIRECTORY}" ]; then
   echo "source-directory parameter is required"
   exit 1
 fi
 
-if [ -z "$INPUT_CONTAINER_NAME" ]; then
+if [ -z "${INPUT_CONTAINER-NAME}" ]; then
   echo "container-name parameter is required"
   exit 1
 fi
 
-if [ -z "$INPUT_CONNECTION_STRING" ]; then
+if [ -z "${INPUT_CONNECTION-STRING}" ]; then
   echo "connection-string parameter is required"
   exit 1
 fi
@@ -24,4 +24,4 @@ else
   PATTERN_PARAM="--pattern"
 fi
 
-az storage blob upload-batch --connection-string ${INPUT_CONNECTION_STRING} --source ${INPUT_SOURCE_DIRECTORY} --destination ${INPUT_CONTAINER_NAME} ${PATTERN_PARAM} ${OPTIONAL_PATTERN} 
+az storage blob upload-batch --connection-string ${INPUT_CONNECTION-STRING} --source ${INPUT_SOURCE-DIRECTORY} --destination ${INPUT_CONTAINER-NAME} ${PATTERN_PARAM} ${OPTIONAL_PATTERN} 

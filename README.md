@@ -31,9 +31,9 @@ jobs:
 
 | Key                 | Value                                                                    |
 |---------------------|--------------------------------------------------------------------------|
-| `source_directory`  | The local directory containing the files to upload                       |
-| `container_name`    | The name of the destination storage account container                    |
-| `connection_string` | The connection string with SAS token for the destination storage account |
+| `source-directory`  | The local directory containing the files to upload                       |
+| `container-name`    | The name of the destination storage account container                    |
+| `connection-string` | The connection string with SAS token for the destination storage account |
 
 ### Optional Variables
 
