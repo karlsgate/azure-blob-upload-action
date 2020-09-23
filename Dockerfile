@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/azure-cli:2.9.1
+FROM mcr.microsoft.com/azure-cli
 
 LABEL "com.github.actions.name"="azure-blob-upload"
 LABEL "com.github.actions.description"="Uploads local files to Azure Blob Storage containers"

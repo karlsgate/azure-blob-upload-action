@@ -24,4 +24,6 @@ else
   PATTERN_PARAM="--pattern"
 fi
 
-az storage blob upload-batch --connection-string ${INPUT_CONNECTION-STRING} --source ${INPUT_SOURCE-DIRECTORY} --destination ${INPUT_CONTAINER-NAME} ${PATTERN_PARAM} ${OPTIONAL_PATTERN} 
+echo "Working from ${PWD}"
+echo "Uploading ${INPUT_SOURCE-DIRECTORY} to ${INPUT_CONTAINER-NAME} ..."
+az storage blob upload-batch --connection-string ${INPUT_CONNECTION-STRING} --source ${INPUT_SOURCE-DIRECTORY} --destination ${INPUT_CONTAINER-NAME} ${PATTERN_PARAM} ${OPTIONAL_PATTERN}
