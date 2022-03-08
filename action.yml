@@ -17,6 +17,9 @@ inputs:
   file_pattern:
     description: "An optional file pattern to limit the files uploaded from the source directory"
     required: false
+  file_overwrite:
+    description: "An optional boolean to overwrite existing files in the destination storage account"
+    required: false
 runs:
   using: "docker"
   image: "Dockerfile"

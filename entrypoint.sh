@@ -17,6 +17,13 @@ if [ -z "${INPUT_CONNECTION_STRING}" ]; then
   exit 1
 fi
 
+OPTIONAL_OVERWRITE=${INPUT_OVERWRITE:""}
+if [ -z "$OPTIONAL_OVERWRITE" ]; then
+  OVERWRITE_PARAM=""
+else
+  OVERWRITE_PARAM="--overwrite"
+fi
+
 OPTIONAL_PATTERN=${INPUT_PATTERN:""}
 if [ -z "$OPTIONAL_PATTERN" ]; then
   PATTERN_PARAM=""
@@ -26,4 +33,4 @@ fi
 
 echo "Working from ${PWD}"
 echo "Uploading ${INPUT_SOURCE_DIRECTORY} to ${INPUT_CONTAINER_NAME} ..."
-az storage blob upload-batch --connection-string ${INPUT_CONNECTION_STRING} --source ${INPUT_SOURCE_DIRECTORY} --destination ${INPUT_CONTAINER_NAME} ${PATTERN_PARAM} ${OPTIONAL_PATTERN}
+az storage blob upload-batch --connection-string ${INPUT_CONNECTION_STRING} --source ${INPUT_SOURCE_DIRECTORY} --destination ${INPUT_CONTAINER_NAME} ${OVERWRITE_PARAM} ${OPTIONAL_OVERWRITE} ${PATTERN_PARAM} ${OPTIONAL_PATTERN}

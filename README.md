@@ -19,12 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: karlsgate/azure-blob-upload@v1
+      - uses: karlsgate/azure-blob-upload@v2
         with:
           source_directory: _dist
           container_name: www
           connection_string: ${{ secrets.ConnectionString }}
           pattern: '*.tar.gz'
+          overwrite: true
 ```
 
 ### Required Variables
@@ -37,9 +38,10 @@ jobs:
 
 ### Optional Variables
 
-| Key          | Value                                                                          |
-|--------------|--------------------------------------------------------------------------------|
-| `pattern`    | An optional file pattern to limit the files uploaded from the source directory |
+| Key         | Value                                                                              |
+|-------------|------------------------------------------------------------------------------------|
+| `pattern`   | An optional file pattern to limit the files uploaded from the source directory     |
+| `overwrite` | An optional boolean to overwrite existing files in the destination storage account |
 
 ## License
 
