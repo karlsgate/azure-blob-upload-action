@@ -14,10 +14,10 @@ inputs:
   source_directory:
     description: "The local directory containing the files to upload"
     required: true
-  file_pattern:
+  pattern:
     description: "An optional file pattern to limit the files uploaded from the source directory"
     required: false
-  file_overwrite:
+  overwrite:
     description: "An optional boolean to overwrite existing files in the destination storage account"
     required: false
 runs:
