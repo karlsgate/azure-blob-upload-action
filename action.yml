@@ -5,17 +5,20 @@ branding:
   icon: "box"
   color: "blue"
 inputs:
-  connection_string:
-    description: "The connection string with SAS token for the destination storage account"
+  source_directory:
+    description: "The local directory containing the files to upload"
     required: true
   container_name:
     description: "The name of the destination storage account container"
     required: true
-  source_directory:
-    description: "The local directory containing the files to upload"
+  connection_string:
+    description: "The connection string with SAS token for the destination storage account"
     required: true
   pattern:
     description: "An optional file pattern to limit the files uploaded from the source directory"
+    required: false
+  content_type:
+    description: "An optional content type explicitly set for the uploaded files"
     required: false
   overwrite:
     description: "An optional boolean to overwrite existing files in the destination storage account"
